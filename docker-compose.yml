@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  diffconfabulatoor:
+    build: 
+      context: .
+      args:
+        UID: 2406
+        GID: 40001
+    container_name: "errorchech"
+    ports:
+      - 8009:8009
+    user: "2406:40001"
+    healthcheck:
+      test: [ "CMD-SHELL", "true"]
+      interval: 10s
+      timeout: 1s
+      retries: 10
+    restart: unless-stopped

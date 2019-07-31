@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+oraclient/instantclient-basic-linux.x64-19.3.0.0.0dbru.zip
+oraclient/instantclient-sqlplus-linux.x64-19.3.0.0.0dbru.zip
