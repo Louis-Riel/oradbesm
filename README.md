@@ -13,6 +13,7 @@ connect sys as sysdba;
 alter session set "_ORACLE_SCRIPT"=true;
 create user dummy identified by dummy;
 GRANT CONNECT, RESOURCE, DBA TO dummy;
+connect dummy/dummy
 create table some_data(some_column varchar(30),some_other_columns varchar(30));
 insert into some_data values ('some','good data');
 insert into some_data values ('more','good data');
