@@ -2,9 +2,9 @@
 /*jshint esversion: 6 */
 import OracleDB from 'oracledb';
 
-module.exports.start = function (params, instance) {
+export function start (params, instance) {
     return new Promise(function (resolve, reject) {
-        console.log("Connecting to db " + JSON.stringify(params.oraConnStr));
+        console.log("Connecting to db " + JSON.stringify(params));
         console.log(process.env);
         OracleDB.getConnection(params.oraConnStr).then((conn) => {
             console.log("Running %s",params.query);

@@ -3,7 +3,7 @@
 To repoduce the problem, 
 
 Run an Oracle db docker container,by running this after a ```docker login``` run a 
-```docker run -d -p 8080:8080 -p 1521:1521 --name OracleDB store/oracle/database-enterprise:12.2.0.1-slim```
+```docker run -d -p 8088:8080 -p 1521:1521 --name OracleDB store/oracle/database-enterprise:12.2.0.1-slim```
 
  Then some login, a table and some irrelevant data
  ```docker exec -it OracleDB bash -c "source /home/oracle/.bashrc; sqlplus /nolog"```
@@ -36,9 +36,10 @@ I patched the oracldb.js to add the log line before the _getconnection
 
 #Build and spin-up the docker container
 - Clone this repo
-- Get a copy  of instantclient-basic-linux.x64-19.3.0.0.0dbru.zip and instantclient-sqlplus-linux.x64-19.3.0.0.0dbru.zip and put those in the oraclient folder
+- run ```mkdir oraclient```
+- Get a copy of instantclient-basic-linux.x64-19.3.0.0.0dbru.zip and instantclient-sqlplus-linux.x64-19.3.0.0.0dbru.zip and put those in the ```oraclient```  folder
 - run ```docker-compose build && docker-compose up```
-- run on a separate session to that server, run ```chmod +x herebedragons.sh``` and ```./herebedragons.sh```
+- run on a separate session to that server, run ```bash herebedragons.sh```
 
 you should expect to see
 

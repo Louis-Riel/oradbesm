@@ -36,4 +36,4 @@ RUN patch ./node_modules/oracledb/lib/oracledb.js ./oracledb_js.patch
 
 RUN chown -R differ $HOME/diffconfabulator
 USER differ
-ENTRYPOINT node -r esm  .
+ENTRYPOINT node --experimental-modules  ./index.js
